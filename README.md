@@ -1,4 +1,4 @@
-# 🪙 Bitcoin Realtime Dashboard & AI Chatbot
+# 🪙 Bitcoin Realtime Dashboard & AI Chat
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-green?logo=fastapi)
