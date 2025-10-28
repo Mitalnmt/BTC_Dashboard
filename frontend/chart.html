@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts - BTC Dash</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">BTC Dash</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="chart.html" class="active">Charts</a></li>
+                <li><a href="chatbot.html">Chatbot</a></li>
+                <li><a href="forecast.html">Forecast</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Bitcoin Charts & Analysis</h1>
+        
+        <!-- Main Chart Layout -->
+        <div class="main-content chart-layout">
+            <!-- Left Column - Charts (70%) -->
+            <div>
+                <!-- Candlestick Chart Panel -->
+                <div class="card mb-24">
+                    <h3>Candlestick Chart (placeholder)</h3>
+                    <p class="muted mb-16">Interactive candlestick chart showing OHLC data with volume indicators</p>
+                    <div class="placeholder placeholder-chart">
+                        Candlestick chart placeholder — OHLC data visualization
+                    </div>
+                </div>
+
+                <!-- Realtime Line Chart Panel -->
+                <div class="card">
+                    <h3>Realtime Line Chart (placeholder)</h3>
+                    <p class="muted mb-16">Live price updates via WebSocket — will be connected later</p>
+                    <div class="placeholder">
+                        Realtime line chart placeholder — WebSocket stream
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Controls (30%) -->
+            <aside>
+                <!-- Timeframe Filters -->
+                <div class="card mb-24">
+                    <h3>Timeframe Filters</h3>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="timeframe" value="1m" checked>
+                            1 Minute
+                        </label>
+                        <label>
+                            <input type="radio" name="timeframe" value="5m">
+                            5 Minutes
+                        </label>
+                        <label>
+                            <input type="radio" name="timeframe" value="1h">
+                            1 Hour
+                        </label>
+                        <label>
+                            <input type="radio" name="timeframe" value="4h">
+                            4 Hours
+                        </label>
+                        <label>
+                            <input type="radio" name="timeframe" value="1d">
+                            1 Day
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Technical Indicators -->
+                <div class="card mb-24">
+                    <h3>Technical Indicators</h3>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="indicators" value="rsi">
+                            RSI (Relative Strength Index)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicators" value="macd">
+                            MACD (Moving Average Convergence Divergence)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicators" value="atr">
+                            ATR (Average True Range)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicators" value="volatility">
+                            Volatility Bands
+                        </label>
+                        <label>
+                            <input type="checkbox" name="indicators" value="bollinger">
+                            Bollinger Bands
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Snapshot Data -->
+                <div class="card">
+                    <h3>Current Snapshot (mock)</h3>
+                    <table>
+                        <tr>
+                            <td class="muted">Open</td>
+                            <td>$65,800.00</td>
+                        </tr>
+                        <tr>
+                            <td class="muted">High</td>
+                            <td class="accent">$66,450.00</td>
+                        </tr>
+                        <tr>
+                            <td class="muted">Low</td>
+                            <td class="danger">$65,200.00</td>
+                        </tr>
+                        <tr>
+                            <td class="muted">Close</td>
+                            <td>$66,200.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Recent OHLCV Table -->
+        <div class="card mt-24">
+            <h3>Recent OHLCV Data (mock)</h3>
+            <p class="muted mb-16">Sample historical data for demonstration purposes</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Open</th>
+                        <th>High</th>
+                        <th>Low</th>
+                        <th>Close</th>
+                        <th>Volume</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-01-15 14:30</td>
+                        <td>$65,800.00</td>
+                        <td class="accent">$66,450.00</td>
+                        <td class="danger">$65,200.00</td>
+                        <td>$66,200.00</td>
+                        <td>1,234.56 BTC</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:25</td>
+                        <td>$65,750.00</td>
+                        <td class="accent">$65,900.00</td>
+                        <td class="danger">$65,600.00</td>
+                        <td>$65,800.00</td>
+                        <td>987.32 BTC</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:20</td>
+                        <td>$65,600.00</td>
+                        <td class="accent">$65,800.00</td>
+                        <td class="danger">$65,400.00</td>
+                        <td>$65,750.00</td>
+                        <td>1,456.78 BTC</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:15</td>
+                        <td>$65,500.00</td>
+                        <td class="accent">$65,700.00</td>
+                        <td class="danger">$65,300.00</td>
+                        <td>$65,600.00</td>
+                        <td>1,123.45 BTC</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:10</td>
+                        <td>$65,400.00</td>
+                        <td class="accent">$65,600.00</td>
+                        <td class="danger">$65,200.00</td>
+                        <td>$65,500.00</td>
+                        <td>1,789.12 BTC</td>
+                    </tr>
+                    <tr>
+                        <td>2024-01-15 14:05</td>
+                        <td>$65,300.00</td>
+                        <td class="accent">$65,500.00</td>
+                        <td class="danger">$65,100.00</td>
+                        <td>$65,400.00</td>
+                        <td>1,345.67 BTC</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Mock UI — HTML-only scaffold</p>
+    </footer>
+</body>
+</html>
