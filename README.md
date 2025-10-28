@@ -1,4 +1,4 @@
-# 🪙 Bitcoin Realtime Dashboard & AI Chat
+# 🪙 Bitcoin Realtime Dashboard & AI Chatbot
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-green?logo=fastapi)
@@ -45,6 +45,8 @@ to deliver a complete data-driven analytics experience.
 
 | Module | Description |
 |--------|-------------|
+| 📈 **Multi-Symbol Dashboard** | Interactive charts for BTC, ETH, BNB, SOL, XRP with price, volume, and volatility metrics. |
+| 📊 **Technical Indicators** | Moving averages (MA7, MA30), volume analysis, and 7-day volatility tracking. |
 | 📈 **Realtime Charts** | Live Bitcoin price streaming from Binance/CoinGecko via WebSocket. |
 | 📊 **Indicators** | RSI, MACD, volatility, sentiment, and Google Trends integration. |
 | 🤖 **AI Chatbot** | DeepSeek R1 (Ollama) or Gemini API for natural-language Q&A and predictions. |
@@ -121,7 +123,31 @@ GEMINI_API_KEY=your_key_here
 OLLAMA_BASE_URL=http://localhost:11434
 ```
 
-### 3️⃣ Run via Docker Compose
+### 3️⃣ Quick Start - Multi-Symbol Dashboard
+
+**Option A: Simple HTML Dashboard (No backend required)**
+```bash
+# Windows
+start-server.bat
+
+# Linux/Mac
+chmod +x start-server.sh
+./start-server.sh
+
+# Or manually
+python -m http.server 8000
+```
+
+Then open: **http://localhost:8000/frontend/dashboard.html**
+
+This standalone dashboard reads data from `data/dataset_total_clean.csv` and displays:
+- Interactive price charts with MA7 and MA30
+- Volume analysis
+- 7-day volatility metrics
+- Summary statistics (current price, 7-day return, 30-day volatility)
+- Support for BTC, ETH, BNB, SOL, XRP
+
+### 4️⃣ Full Stack with Docker Compose
 ```bash
 docker compose up --build
 ```
@@ -134,7 +160,27 @@ Services will start:
 
 ## 🗂️ Project Structure
 ```
-/app
+/
+ ├── data/
+ │    ├── dataset_total_clean.csv  # Combined dataset for all symbols
+ │    ├── BTC/
+ │    ├── ETH/
+ │    ├── BNB/
+ │    ├── SOL/
+ │    └── XRP/
+ ├── frontend/
+ │    ├── dashboard.html     # Multi-symbol interactive dashboard
+ │    ├── index.html         # Home page
+ │    ├── chart.html         # Chart page
+ │    ├── chatbot.html       # AI Chatbot interface
+ │    ├── forecast.html      # Forecast page
+ │    └── assets/
+ │         └── css/
+ │              └── style.css
+ ├── project/
+ │    └── FULL_STACK.ipynb   # Jupyter notebook with analysis
+ ├── start-server.bat        # Windows server startup script
+ ├── start-server.sh         # Linux/Mac server startup script
  ├── backend/
  │    ├── src/
  │    │    ├── api/          # FastAPI routers (REST endpoints)
@@ -144,13 +190,6 @@ Services will start:
  │    │    ├── services/     # Binance, CoinGecko, News, Trends (stubs)
  │    │    └── main.py       # FastAPI entrypoint
  │    └── requirements.txt
- ├── frontend/
- │    ├── public/
- │    ├── src/
- │    │    ├── app/          # Next.js app router
- │    │    ├── components/   # Chart, Chatbot, Upload, Forecast UI
- │    │    └── lib/          # API / WebSocket clients
- │    └── package.json
  ├── deploy/
  │    └── docker-compose.yml
  └── README.md
